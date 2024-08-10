@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aicloset.ui.theme.AiClosetTheme
 import com.example.myapp.Product
-import com.example.myapp.com.example.aicloset.ProductAdapter
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

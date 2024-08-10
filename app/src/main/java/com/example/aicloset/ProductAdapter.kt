@@ -1,11 +1,11 @@
-package com.example.myapp.com.example.aicloset
+package com.example.aicloset
 
-import com.example.aicloset.R
+import android.content.Intent
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -13,7 +13,7 @@ class ProductAdapter(private val productList: List<com.example.myapp.Product>) :
 
     // ViewHolder 클래스 정의
     class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val productImage: ImageView = itemView.findViewById(R.id.product_image)
+        val productImageButton: ImageButton = itemView.findViewById(R.id.product_image_button)
         val productName: TextView = itemView.findViewById(R.id.product_name)
         val productPrice: TextView = itemView.findViewById(R.id.product_price)
     }
@@ -29,8 +29,17 @@ class ProductAdapter(private val productList: List<com.example.myapp.Product>) :
         val product = productList[position]
         holder.productName.text = product.name
         holder.productPrice.text = product.price
-        // 이미지를 설정할 때는 Glide 또는 Picasso 같은 라이브러리 사용
-        // holder.productImage.setImageResource(product.imageResId)
+        holder.productImageButton.setImageResource(product.imageResId)
+
+        // 이미지 버튼 클릭 시 상세 정보 페이지로 이동
+        holder.productImageButton.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, ProductDetailActivity::class.java)
+            intent.putExtra("PRODUCT_NAME", product.name)
+            intent.putExtra("PRODUCT_PRICE", product.price)
+            intent.putExtra("PRODUCT_IMAGE", product.imageResId)
+            context.startActivity(intent)
+        }
     }
 
     // 아이템 개수 반환

@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/AiButton"
+        android:id="@+id/Ai_Button"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="5dp"
@@ -28,125 +28,30 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/teal_200"/>
 
+    <!-- 장바구니 버튼 -->
+    <Button
+        android:id="@+id/cart_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/cart_button"
+        android:text="Cart"
+        android:contentDescription="Cart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/Ai_Button"
+        />
 
-
-    <HorizontalScrollView
-        android:id="@+id/Scroll1"
-        android:layout_margin="20dp"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:layout_constraintTop_toBottomOf="@id/AiButton"
+    <!-- 제품 목록 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/product_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/Search"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/img1"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_1"
-                android:background="#86D0D0D0"
-                />
-            <Button
-                android:id="@+id/img2"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_2"
-                android:background="#86D0D0D0"/>
-            <Button
-                android:id="@+id/img3"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_3"
-                android:background="#86D0D0D0"/>
-            <Button
-                android:id="@+id/img4"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_4"
-                android:background="#86D0D0D0"/>
-            <Button
-                android:id="@+id/img5"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_5"
-                android:background="#86D0D0D0"/>
-            <Button
-                android:id="@+id/img6"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_6"
-                android:background="#86D0D0D0"/>
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <HorizontalScrollView
-        android:id="@+id/Scroll2"
-        android:layout_margin="20dp"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:layout_constraintTop_toBottomOf="@id/Scroll1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/img1_1"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_1"
-                android:background="#86D0D0D0"
-                />
-            <Button
-                android:id="@+id/img2_1"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_2"
-                android:background="#86D0D0D0"/>
-            <Button
-                android:id="@+id/img3_1"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_3"
-                android:background="#86D0D0D0"/>
-            <Button
-                android:id="@+id/img4_1"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_4"
-                android:background="#86D0D0D0"/>
-            <Button
-                android:id="@+id/img5_1"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_5"
-                android:background="#86D0D0D0"/>
-            <Button
-                android:id="@+id/img6_1"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="3dp"
-                android:text="image_6"
-                android:background="#86D0D0D0"/>
-        </LinearLayout>
-    </HorizontalScrollView>
-
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
